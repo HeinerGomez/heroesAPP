@@ -28,4 +28,10 @@ export class HeroesComponent {
     });
   }
 
+  public enviarPeticion() {
+    this._heroesService.pruebaHan().subscribe( res => {
+      console.log(res);
+    });
+  }
+
 }

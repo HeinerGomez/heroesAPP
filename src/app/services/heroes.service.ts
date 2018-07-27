@@ -55,4 +55,13 @@ export class HeroesService {
     const url = `${this.heroeURL}/${key$}.json`;
     return this.http.delete(url).pipe(map(res => res));
   }
+
+  public pruebaHan() {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'api-token': 'XD7e5SgM7txLsmjCBFkwQ0dtmdWeMsvpGoolWuViejSMlBZ2YvQENA5XrYz1'
+    });
+    return this.http.get('http://qa.intrared.net:8880/v1/empleado/1015432835', {headers}).pipe(map(res => res));
+  }
 }
