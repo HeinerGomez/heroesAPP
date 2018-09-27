@@ -11,10 +11,14 @@ import { Heroe } from '../../interfaces/heroe.interface';
 export class HeroesComponent {
 
   public heroes: Heroe [];
+  public loading = true;
 
   constructor(private _heroesService: HeroesService) {
     this._heroesService.getHeroes().subscribe( heroes => {
-      this.heroes = heroes;
+      setTimeout(() => {
+        this.heroes = heroes;
+        this.loading = false;
+      }, 1500);
     });
   }
 

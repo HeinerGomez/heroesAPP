@@ -23,7 +23,7 @@ export class HeroeComponent  {
   constructor(private _heoresService: HeroesService, private router: Router, private route: ActivatedRoute) { 
     this.route.params.subscribe( parametros => {
       this.id = parametros['id'];
-      if (this.id !== 'Nuevo') {
+      if (this.id !== 'nuevo') {
         this._heoresService.getHeroe(this.id).subscribe( heroe => this.heroe = heroe );
       }
     });
